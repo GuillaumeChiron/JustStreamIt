@@ -1,0 +1,114 @@
+main {
+    margin-left: 50px;
+}
+
+.police {
+    font-family: "Oswald", sans-serif;
+}
+
+h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 4em;
+    font-weight: 400;
+}
+
+h3 {
+    font-family: "Oswald", sans-serif;
+}
+
+p {
+    font-family: "Oswald", sans-serif;
+    text-align: justify;
+}
+
+.box_meilleur_film {
+    border: solid 5px black;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px 200px 100px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+.element_mf {
+    margin: 20px;
+}
+
+.element_mf_1 {
+    grid-row: 1/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    width: 250px;
+    height: auto;
+}
+
+.element_mf_2 {
+    grid-column: 2/4;
+    grid-row: 1/1;
+    font-size: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.element_mf_3 {
+    grid-column: 2/4;
+    grid-row: 2/2;
+    font-size: 1.25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.element_mf_4 {
+    grid-column: 4/4;
+    grid-row: 3/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FA0B0B;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 50px;
+    width: 150px;
+    height: 50px;
+}
+
+
+.film_mieux_note {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.film_mieux_note img {
+    width: 300px;
+    height: auto;
+}
+
+.details_film_mn {
+    position: relative;
+}
+
+.film_mn_hover {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px 100px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.titre_mn_hover {
+    grid-column: 3/3;
+}
+
+.details_mn_hover {
+    grid-column: 3/3;
+}

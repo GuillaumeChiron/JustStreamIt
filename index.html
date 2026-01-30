@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>JustStreamIt</title>
     <link href="style/header.css" rel="stylesheet">
-    <link href="style/body.css" rel="strylesheet">
+    <link href="style/main.css" rel="stylesheet">
     <link href="style/footer.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +14,10 @@
 
 <body>
     <header>
-        <div>
-            <img src="images/image.png" alt="Logo du site" title="Logo du site">
+        <section class="box">
+            <img src="images/image.png" class="logo" alt="Logo du site" title="Logo du site">
             <h1>Vidéo à la demande</h1>
-        </div>
+        </section>
     </header>
 
     <nav>
@@ -26,10 +26,48 @@
     <main>
         <section>
             <h2>Meilleur film</h2>
+            <div class="box_meilleur_film">
+                <img src="https://fastly.picsum.photos/id/340/200/300.jpg?hmac=JIWzQMzudGQJ5ZI2GIRg4NTwRI4fwA8k8xcnMvEmwcQ"
+                    class="element_mf element_mf_1">
+                <h3 class="element_mf element_mf_2">Titre film</h3>
+                <p class="element_mf element_mf_3">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
+                    faucibus ex sapien vitae pellentesque
+                    sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna
+                    tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada
+                    lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora
+                    torquent per conubia nostra inceptos himenaeos.
+                </p>
+                <p class="element_mf element element_mf_4">Détails</p>
+
+            </div>
         </section>
 
         <section>
             <h2>Films les mieux notés</h2>
+            <section class="film_mieux_note">
+
+                <div class="details_film_mn">
+                    <a>
+                        <img
+                            src="https://fastly.picsum.photos/id/151/200/200.jpg?hmac=RsW3eUusYZr48IOrlSs9K5ryBvl6Gh_KtI0cyUSVDX4">
+                        <!-- <h3 class="film_mn_hover titre_mn_hover">Titre</h3>
+                        <p class="film_mn_hover details_mn_hover">Détails</p> -->
+                    </a>
+                </div>
+
+                <img
+                    src="https://fastly.picsum.photos/id/471/200/200.jpg?hmac=LEJyaxVwJ-Df2QN6POR3mvD0nKLbC6GIntpAUjTR3gM">
+                <img
+                    src="https://fastly.picsum.photos/id/596/200/200.jpg?hmac=TiMsstBNF6YKq9Gn7QGsihITEUcv_O8QuTXEVR3T6GA">
+                <img
+                    src="https://fastly.picsum.photos/id/439/200/200.jpg?hmac=Aig4UrUSSGah1WrKUdIlJOecKTpPZDiUFpnllH4YPOY">
+                <img
+                    src="https://fastly.picsum.photos/id/51/200/200.jpg?hmac=AxDMciMBjL8UIKzxl80paiBUywP7elWptqQW_qTq8vw">
+                <img
+                    src="https://fastly.picsum.photos/id/103/200/200.jpg?hmac=iAYeZbg7h6KXJzEJuemMnhxfHUPDu6OkgQ_TfAMWlRM">
+
+            </section>
         </section>
 
         <section>
