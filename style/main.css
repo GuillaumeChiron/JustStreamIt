@@ -21,6 +21,13 @@ p {
     text-align: justify;
 }
 
+a {
+    font-family: "Oswald", sans-serif;
+    text-decoration: none;
+}
+
+
+
 .box_meilleur_film {
     border: solid 5px black;
     padding: 30px;
@@ -72,12 +79,16 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #FA0B0B;
+    background: #C74E42;
     color: white;
     font-size: 1.5em;
     border-radius: 50px;
     width: 150px;
     height: 50px;
+}
+
+.element_mf_4:hover {
+    background: #A34F43;
 }
 
 
