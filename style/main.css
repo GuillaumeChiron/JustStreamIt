@@ -142,8 +142,8 @@ a {
     width: 75px;
     height: auto;
     border-radius: 30px;
-    padding: 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .contenair_film_mn:hover .box_film_mn_hover {
