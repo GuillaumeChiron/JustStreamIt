@@ -151,6 +151,12 @@ a {
     display: grid;
 }
 
+label {
+    font-family: "Oswald", sans-serif;
+    font-size: 4em;
+    font-weight: 400;
+}
+
 @media screen and (max-width: 1200px) {
     .element_mf_1 {
         display: none;
