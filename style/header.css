@@ -28,6 +28,14 @@ h1 {
     height: 150PX;
 }
 
+/* Format Tablette */
+@media screen and (max-width: 900px) {
+
+    .box {
+        gap: 30px;
+    }
+}
+
 /* Format Mobile */
 @media screen and (max-width: 600px) {
 
@@ -46,12 +54,5 @@ h1 {
 
     h1 {
         display: none;
-    }
-}
-
-/* Format Tablette */
-@media screen and (max-width: 900px) {
-    .box {
-        gap: 30px;
     }
 }
