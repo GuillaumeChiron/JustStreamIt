@@ -207,12 +207,6 @@ select {
         margin: 50px;
     }
 
-    .contenair_film_mn img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: cover;
-    }
-
     .box_meilleur_film {
         padding: 15px;
         height: auto;
@@ -242,6 +236,17 @@ select {
     .element_mf_4 {
         margin-left: 15px;
     }
+
+    .carousel {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenair_film_mn img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
 }
 
 
@@ -252,13 +257,30 @@ select {
     }
 
     .film_mieux_note {
-        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-auto-flow: column;
+        gap: 20px;
+
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 10px;
+
+        scroll-snap-type: x mandatory;
     }
 
-    .contenair_film_mn img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: cover;
+    .film_mieux_note::-webkit-scrollbar {
+        display: none;
+    }
+
+    .contenair_film_mn {
+        width: 300px;
+        scroll-snap-align: start;
+    }
+
+    .film_mieux_note img {
+        width: 100%;
+        height: auto;
     }
 
     .box_meilleur_film {
@@ -305,9 +327,29 @@ select {
     }
 
     .film_mieux_note {
-        grid-template-columns: 1fr;
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 10px;
     }
 
+    .film_mieux_note::-webkit-scrollbar {
+        display: none;
+        /* cache la barre */
+    }
+
+    .contenair_film_mn {
+        flex: 0 0 auto;
+        width: 300px;
+        height: auto;
+        /* taille fixe des cartes */
+    }
+
+    .film_mieux_note img {
+        width: 100%;
+        height: auto;
+    }
 
     .box_meilleur_film {
         max-width: 100%;
@@ -316,12 +358,6 @@ select {
         display: grid;
         grid-template-columns: 1fr;
         padding: 20px;
-    }
-
-    .contenair_film_mn img {
-        max-width: 100%;
-        max-height: auto;
-        object-fit: cover;
     }
 
     .element_mf_2 {
