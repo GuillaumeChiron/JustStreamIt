@@ -28,22 +28,30 @@ h1 {
     height: 150PX;
 }
 
-@media screen and (max-width: 480px) {
+/* Format Mobile */
+@media screen and (max-width: 600px) {
 
     header {
         margin: 10px;
     }
 
     .box {
-        height: 100px;
+        height: 150px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
+
     }
-    
+
     h1 {
         display: none;
+    }
+}
+
+/* Format Tablette */
+@media screen and (max-width: 900px) {
+    .box {
+        gap: 30px;
     }
 }
