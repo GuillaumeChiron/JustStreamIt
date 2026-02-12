@@ -1,3 +1,5 @@
+// Ce fichier contient les fonctions utiles au script
+
 async function imageError(urlImage, imageParDefaut) {
     return new Promise((resolve) => {
         const img = new Image();
@@ -7,13 +9,4 @@ async function imageError(urlImage, imageParDefaut) {
 
         img.src = urlImage;
     });
-}
-
-function changeData(data, balise) {
-     let divsFilm = document.querySelectorAll(balise)
-
-        divsFilm.forEach(divFilm => {
-            divFilm.querySelector("img[src]").src = data.image_url
-            divFilm.querySelector("h3").textContent = data.original_title
-        })
 }

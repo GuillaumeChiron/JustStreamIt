@@ -1,3 +1,5 @@
+//Ce fichier contient le script modifiant les données de la page web
+
 async function recupererDonnees(requete) {
   try {
     const response = await fetch(requete);
@@ -26,17 +28,19 @@ async function dataMeilleurFilm(requete) {
 
 async function dataFilmsMystery(requete){
     const dataFilmsMystery = await recupererDonnees(requete)
+    let divsFilm = document.querySelectorAll("section.film.Mystery .contenair_film")
 
     for (let i=0; i<dataFilmsMystery.results.length; i++){
-        let data = await recupererDonnees(dataFilmsMystery.results[i].url)
-        console.log(data)
+      let data = await recupererDonnees(dataFilmsMystery.results[i].url)
+      console.log(data)
 
-        changeData(data, "section.film.Mystery .contenair_film")
+      const divFilm = divsFilm[i]
+      divFilm.querySelector("img[src]").src = data.image_url
+      divFilm.querySelector("h3").textContent = data.original_title
+         
     }
+          
 }
-
-const urlMeilleursFilm = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
-const urlFilmsMystery = "http://localhost:8000/api/v1/titles/?genre=Mystery&limit=6"
 
 dataMeilleurFilm(urlMeilleursFilm)
 dataFilmsMystery(urlFilmsMystery)
