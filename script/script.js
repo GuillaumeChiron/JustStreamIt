@@ -8,42 +8,35 @@ async function recupererDonnees(requete) {
   }
 }
 
+async function dataMeilleurFilm(requete) {
+    const data = await recupererDonnees(requete)
+    const dataMeilleurFilm = data.results[0]
+    const meilleurFilm = await recupererDonnees(dataMeilleurFilm.url)
 
-async function modifmeilleurFilm(requete) {
-  const data = await recupererDonnees(requete)
-  console.log(data)
-
-  document.querySelector(".element_mf_2").textContent = data.original_title
-  document.querySelector(".element_mf_3").textContent = data.long_description
-  console.log(data["image_url"])
-  const isPictureOnline = pictureOnline(data["image_url"])
-  console.log(isPictureOnline)
-  let image = document.querySelector(".element_mf_1")
-  if (isPictureOnline) {
-    image.setAttribute("src", data.image_url)
-  } else {
-    console.log("l'image n'existe pas")
-  }
-
+    const imageUrl = await imageError(
+        meilleurFilm.image_url,
+        "https://fastly.picsum.photos/id/334/200/200.jpg?hmac=Q9rDA3ngheQsAB7HoLSjpzYS0kqelfZIJBGDkW-4wgk"
+    );
+    
+    document.querySelector(".element_mf_1").setAttribute("src", imageUrl)
+    document.querySelector(".element_mf_2").textContent = meilleurFilm.original_title
+    document.querySelector(".element_mf_3").textContent = meilleurFilm.long_description
 }
 
-async function test(requete) {
-  const data = await recupererDonnees(requete)
-  console.log(data)
 
-}
+async function dataFilmsMystery(requete){
+    const dataFilmsMystery = await recupererDonnees(requete)
 
-async function pictureOnline(url) {
-  try {
-    let response = await fetch(url, { method: "HEAD" })
-    if (response.status === 200) {
-      return true
+    for (let i=0; i<dataFilmsMystery.results.length; i++){
+        let data = await recupererDonnees(dataFilmsMystery.results[i].url)
+        console.log(data)
+
+        changeData(data, "section.film.Mystery .contenair_film")
     }
-    return false
-  } catch (error) {
-    return false
-  }
 }
 
+const urlMeilleursFilm = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
+const urlFilmsMystery = "http://localhost:8000/api/v1/titles/?genre=Mystery&limit=6"
 
-modifmeilleurFilm("http://localhost:8000/api/v1/titles/499549")
+dataMeilleurFilm(urlMeilleursFilm)
+dataFilmsMystery(urlFilmsMystery)

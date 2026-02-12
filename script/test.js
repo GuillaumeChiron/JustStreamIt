@@ -8,28 +8,42 @@ async function recupererDonnees(requete) {
   }
 }
 
-async function dataMeilleurFilm(requete) {
-    const data = await recupererDonnees(requete)
-    const dataMeilleurFilm = data.results[0]
-    const meilleurFilm = await recupererDonnees(dataMeilleurFilm.url)
-    
-    // document.querySelector(".element_mf_1").setAttribute("src", meilleurFilm.image_url)
-    document.querySelector(".element_mf_2").textContent = meilleurFilm.original_title
-    document.querySelector(".element_mf_3").textContent = meilleurFilm.long_description
+
+async function modifmeilleurFilm(requete) {
+  const data = await recupererDonnees(requete)
+  console.log(data)
+
+  document.querySelector(".element_mf_2").textContent = data.original_title
+  document.querySelector(".element_mf_3").textContent = data.long_description
+  console.log(data["image_url"])
+  const isPictureOnline = pictureOnline(data["image_url"])
+  console.log(isPictureOnline)
+  let image = document.querySelector(".element_mf_1")
+  if (isPictureOnline) {
+    image.setAttribute("src", data.image_url)
+  } else {
+    console.log("l'image n'existe pas")
+  }
+
 }
 
-async function dataFilmsMystery(requete){
-    const dataFilmsMystery = await recupererDonnees(requete)
-    let tableauFilmsMystery = []
-    for (let i=0; i<dataFilmsMystery.results.length; i++){
-        tableauFilmsMystery.push(dataFilmsMystery.results[i].url)
+async function test(requete) {
+  const data = await recupererDonnees(requete)
+  console.log(data)
+
+}
+
+async function pictureOnline(url) {
+  try {
+    let response = await fetch(url, { method: "HEAD" })
+    if (response.status === 200) {
+      return true
     }
-    console.log(tableauFilmsMystery)
+    return false
+  } catch (error) {
+    return false
+  }
 }
 
 
-const urlMeilleursFilm = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
-const urlFilmsMystery = "http://localhost:8000/api/v1/titles/?genre=Mystery&limit=6"
-
-dataMeilleurFilm(urlMeilleursFilm)
-dataFilmsMystery(urlFilmsMystery)
+modifmeilleurFilm("http://localhost:8000/api/v1/titles/499549")
