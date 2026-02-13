@@ -41,5 +41,4 @@ async function dataFilms(requete, balise) {
     divFilm.querySelector("h3").textContent = data.title
 
   }
-
 }

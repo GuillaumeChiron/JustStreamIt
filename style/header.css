@@ -16,6 +16,7 @@ h1 {
 
 .box {
     border: solid 1px black;
+    border-radius: 30px;
     background-color: #61787F;
     height: 200px;
     display: flex;
