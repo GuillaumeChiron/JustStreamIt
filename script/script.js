@@ -7,13 +7,13 @@ async function dataMeilleurFilm(requete) {
     const meilleurFilm = await recupererDonnees(dataMeilleurFilm.url)
 
     const imageUrl = await imageError(meilleurFilm.image_url, imageDefault);
-    
+
     document.querySelector(".element_mf_1").setAttribute("src", imageUrl)
-    document.querySelector(".element_mf_2").textContent = meilleurFilm.original_title
-    document.querySelector(".element_mf_3").textContent = meilleurFilm.long_description
+    document.querySelector(".element_mf_2").textContent = meilleurFilm.title
+    document.querySelector(".element_mf_3").textContent = meilleurFilm.description
 }
 
-
+//Lance les différentes fonctions pour mettre à jour la page web
 dataMeilleurFilm(urlMeilleursFilm)
 dataFilms(urlFilmsMieuxNote, "section.film.Mieux_note .contenair_film")
 dataFilms(urlFilmsMystery, "section.film.Mystery .contenair_film")

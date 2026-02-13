@@ -13,33 +13,33 @@ async function recupererDonnees(requete) {
 }
 
 
-//Retourne l'image si elle est bonne sinon renvoie une image par default
+//Retourne l'image si elle est bonne sinon retourne une image par default
 async function imageError(urlImage, imageParDefaut) {
-    return new Promise((resolve) => {
-        const img = new Image();
+  return new Promise((resolve) => {
+    const img = new Image();
 
-        img.onload = () => resolve(urlImage);
-        img.onerror = () => resolve(imageParDefaut);
+    img.onload = () => resolve(urlImage);
+    img.onerror = () => resolve(imageParDefaut);
 
-        img.src = urlImage;
-    });
+    img.src = urlImage;
+  });
 }
 
 
 //Met à jour les données de films d'une catégorie dans la page web
-async function dataFilms(requete, balise){
-    const dataFilms = await recupererDonnees(requete)
-    let divsFilm = document.querySelectorAll(balise)
+async function dataFilms(requete, balise) {
+  const dataFilms = await recupererDonnees(requete)
+  let divsFilm = document.querySelectorAll(balise)
 
-    for (let i=0; i<dataFilms.results.length; i++){
-      let data = await recupererDonnees(dataFilms.results[i].url)
+  for (let i = 0; i < dataFilms.results.length; i++) {
+    let data = await recupererDonnees(dataFilms.results[i].url)
 
-      const divFilm = divsFilm[i]
-      const imageUrl = await imageError(data.image_url, imageDefault)
-    
-      divFilm.querySelector("img[src]").src = imageUrl
-      divFilm.querySelector("h3").textContent = data.original_title
-         
-    }
-          
+    const divFilm = divsFilm[i]
+    const imageUrl = await imageError(data.image_url, imageDefault)
+
+    divFilm.querySelector("img[src]").src = imageUrl
+    divFilm.querySelector("h3").textContent = data.title
+
+  }
+
 }
