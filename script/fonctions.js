@@ -83,24 +83,30 @@ async function dataFilmsMn(requete, balise) {
 
 // gestion du Popup
 
-let popup = document.querySelector(".popup")
-let btnOpenPopup = document.querySelector(".btnDetails")
+const popupBackground = document.querySelector(".popupBackground")
+const popup = document.querySelector(".popup_content")
+let popupContent = document.querySelector(".popup_content")
 const mainFilm = document.querySelector("main")
 
 function afficherPopup() {
- popup.classList.remove("hidden")
+ popupBackground.classList.remove("hidden")
 }
 
 function cacherPopup () {
-  popup.classList.add("hidden")
+  popupBackground.classList.add("hidden")
 }
 
 async function initPopup () {
 
+  //Ouverture du Popup avec les infos du film
   mainFilm.addEventListener("click", async (event)=> {
-    const btn = event.target.closest(".contenair_film")
+    const btn = event.target.closest(".btnDetails")
+    if (!btn) return
 
-    urlFilm = `http://localhost:8000/api/v1/titles/${btn.id}`
+    const card = btn.closest(".contenair_film")
+    if (!card) return
+
+    urlFilm = `http://localhost:8000/api/v1/titles/${card.id}`
     console.log(urlFilm)
     const dataFilm = await recupererDonnees(urlFilm)
     console.log(dataFilm)
@@ -139,8 +145,6 @@ async function initPopup () {
       newActeurs += `${acteurs[iA]}, `
     }
 
-
-
     popup.innerHTML= `<div class="informations_film">
         <button id="btnClose">←</button>
         <h3><span>${titre}</span></h3>
@@ -157,10 +161,11 @@ async function initPopup () {
 
         afficherPopup()
 
+      //Fermeture du Popup
+      const btnClosePopup = document.getElementById("btnClose")
+      btnClosePopup.addEventListener("click", ()=>{
+        cacherPopup()
+      })
     })
- 
-  let btnClosePopup = document.getElementById("btnClose")
-  btnClosePopup.addEventListener("click", () => {
-    cacherPopup()
-  })
+
 }
