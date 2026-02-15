@@ -15,6 +15,6 @@ async function dataMeilleurFilm(requete) {
 
 //Lance les différentes fonctions pour mettre à jour la page web
 dataMeilleurFilm(urlMeilleursFilm)
-dataFilms(urlFilmsMieuxNote, "section.film.Mieux_note .contenair_film")
+dataFilmsMn(urlFilmsMieuxNote, "section.film.Mieux_note .contenair_film")
 dataFilms(urlFilmsMystery, "section.film.Mystery .contenair_film")
 dataFilms(urlFilmsCategorie2, "section.film.Categorie_2 .contenair_film")

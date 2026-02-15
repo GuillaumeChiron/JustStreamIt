@@ -2,7 +2,7 @@
 
 //URL des Catégories de films
 const urlMeilleursFilm = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
-const urlFilmsMieuxNote = "http://localhost:8000/api/v1/titles/?page=2&sort_by=-imdb_score"
+const urlFilmsMieuxNote = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7"
 const urlFilmsMystery = "http://localhost:8000/api/v1/titles/?genre=Mystery&page_size=6"
 const urlFilmsCategorie2 = "http://localhost:8000/api/v1/titles/?genre=Action&page_size=6"
 
