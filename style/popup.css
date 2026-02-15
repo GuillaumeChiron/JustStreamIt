@@ -18,6 +18,10 @@
     z-index: 1;
 }
 
+.activate {
+    display: flex;
+}
+
 .informations_film {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -63,6 +67,6 @@ button:hover {
     margin: auto;
 }
 
-.popup .text_en_gras {
+.popup span {
     font-weight: bold;
 }

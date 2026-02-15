@@ -1,6 +1,6 @@
 //Ce fichier contient le script modifiant les données de la page web
 
-//Met à jour les données du meilleur film da la page web
+//Met à jour les données du meilleur film de la page web
 async function dataMeilleurFilm(requete) {
     const data = await recupererDonnees(requete)
     const dataMeilleurFilm = data.results[0]
@@ -18,3 +18,5 @@ dataMeilleurFilm(urlMeilleursFilm)
 dataFilmsMn(urlFilmsMieuxNote, "section.film.Mieux_note .contenair_film")
 dataFilms(urlFilmsMystery, "section.film.Mystery .contenair_film")
 dataFilms(urlFilmsCategorie2, "section.film.Categorie_2 .contenair_film")
+
+initPopup()

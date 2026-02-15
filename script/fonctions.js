@@ -26,6 +26,20 @@ async function imageError(urlImage, imageParDefaut) {
 }
 
 
+//Met à jour les données du meilleur film de la page web
+async function dataMeilleurFilm(requete) {
+    const data = await recupererDonnees(requete)
+    const dataMeilleurFilm = data.results[0]
+    const meilleurFilm = await recupererDonnees(dataMeilleurFilm.url)
+
+    const imageUrl = await imageError(meilleurFilm.image_url, imageDefault);
+
+    document.querySelector(".element_mf_1").setAttribute("src", imageUrl)
+    document.querySelector(".element_mf_2").textContent = meilleurFilm.title
+    document.querySelector(".element_mf_3").textContent = meilleurFilm.description
+}
+
+
 //Met à jour les données de films d'une catégorie dans la page web
 async function dataFilms(requete, balise) {
   const dataFilms = await recupererDonnees(requete)
@@ -38,6 +52,7 @@ async function dataFilms(requete, balise) {
     const imageUrl = await imageError(data.image_url, imageDefault)
     const title = data.title.slice(0, 13) + "..."
 
+    divFilm.id = data.id
     divFilm.querySelector("img[src]").src = imageUrl
     divFilm.querySelector("h3").textContent = title
 
@@ -56,8 +71,36 @@ async function dataFilmsMn(requete, balise) {
     const imageUrl = await imageError(data.image_url, imageDefault)
     const title = data.title.slice(0, 13) + "..."
 
+    divFilm.id = data.id
     divFilm.querySelector("img[src]").src = imageUrl
     divFilm.querySelector("h3").textContent = title
 
   }
+}
+
+function afficherPopup() {
+ const popup = document.querySelector(".popup")
+ popup.classList.add("activate")
+}
+
+function cacherPopup () {
+  const popup = document.querySelector(".popup")
+  popup.classList.remove("activate")
+}
+
+function initPopup () {
+  let btnOpenPopup = document.getElementById("btnOpen")
+  let btnClosePopup = document.getElementById("btnClose")
+
+  btnOpenPopup.addEventListener("click", ()=>{
+    afficherPopup()
+  })
+
+  btnClosePopup.addEventListener("click", ()=> {
+    cacherPopup()
+  })
+}
+
+function dataPopup(){
+
 }
