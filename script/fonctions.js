@@ -34,6 +34,9 @@ async function dataMeilleurFilm(requete) {
 
     const imageUrl = await imageError(meilleurFilm.image_url, imageDefault);
 
+    const divFilm = document.querySelector(".box_meilleur_film")
+    
+    divFilm.id = meilleurFilm.id
     document.querySelector(".element_mf_1").setAttribute("src", imageUrl)
     document.querySelector(".element_mf_2").textContent = meilleurFilm.title
     document.querySelector(".element_mf_3").textContent = meilleurFilm.description
@@ -78,29 +81,86 @@ async function dataFilmsMn(requete, balise) {
   }
 }
 
+// gestion du Popup
+
+let popup = document.querySelector(".popup")
+let btnOpenPopup = document.querySelector(".btnDetails")
+const mainFilm = document.querySelector("main")
+
 function afficherPopup() {
- const popup = document.querySelector(".popup")
- popup.classList.add("activate")
+ popup.classList.remove("hidden")
 }
 
 function cacherPopup () {
-  const popup = document.querySelector(".popup")
-  popup.classList.remove("activate")
+  popup.classList.add("hidden")
 }
 
-function initPopup () {
-  let btnOpenPopup = document.getElementById("btnOpen")
+async function initPopup () {
+
+  mainFilm.addEventListener("click", async (event)=> {
+    const btn = event.target.closest(".contenair_film")
+
+    urlFilm = `http://localhost:8000/api/v1/titles/${btn.id}`
+    console.log(urlFilm)
+    const dataFilm = await recupererDonnees(urlFilm)
+    console.log(dataFilm)
+    
+
+    //Elements du Film
+    let titre = dataFilm.title
+    let annee = dataFilm.year
+    let genres = dataFilm.genres
+    let newGenres = ""
+    for (let iG = 0; iG<genres.length; iG++){
+      newGenres += `${genres[iG]} `
+    }
+  
+    let duree = dataFilm.duration
+    let pays = dataFilm.countries
+    let newPays = ""
+    for (let iP = 0; iP<pays.length; iP++) {
+      newPays += `${pays[iP]}, `
+    }
+    let imdScore = dataFilm.imdb_score
+    let recette = dataFilm.budget
+    if (recette === null){
+      recette = "information inexistante"
+    }
+    let realisateur = dataFilm.directors
+    let newRealisateur = ""
+    for (let iR = 0; iR<realisateur.length; iR++) {
+      newRealisateur += `${realisateur[iR]}, `
+    }
+    let image_url = await imageError(dataFilm.image_url, imageDefault)
+    let description = dataFilm.long_description
+    let acteurs = dataFilm.actors
+    let newActeurs = ""
+    for (let iA = 0; iA<acteurs.length; iA++) {
+      newActeurs += `${acteurs[iA]}, `
+    }
+
+
+
+    popup.innerHTML= `<div class="informations_film">
+        <button id="btnClose">←</button>
+        <h3><span>${titre}</span></h3>
+        <p><span>${annee} - ${newGenres}</span></p>
+        <p><span>PG, ${duree} minutes (${newPays})</span></p>
+        <p><span>IMDB score: ${imdScore}/10</span></p>
+        <p><span>Recette box-office: </span>&nbsp;${recette}</p>
+        <p><span>Réalisé par:</span>&nbsp;${newRealisateur}</p>
+        <img
+            src="${image_url}">
+      </div>
+      <p>${description}</p>
+      <p><span>Avec:</span><br>${newActeurs}</p>`;
+
+        afficherPopup()
+
+    })
+ 
   let btnClosePopup = document.getElementById("btnClose")
-
-  btnOpenPopup.addEventListener("click", ()=>{
-    afficherPopup()
-  })
-
-  btnClosePopup.addEventListener("click", ()=> {
+  btnClosePopup.addEventListener("click", () => {
     cacherPopup()
   })
-}
-
-function dataPopup(){
-
 }

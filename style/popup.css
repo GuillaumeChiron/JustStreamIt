@@ -3,8 +3,11 @@
 }
 
 /* Gestion des éléments du popup */
-.popup {
+.hidden {
     display: none;
+}
+
+.popup {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -18,55 +21,160 @@
     z-index: 1;
 }
 
-.activate {
-    display: flex;
-}
+/* gestion du responsive */
 
-.informations_film {
+/* Format grand écran */
+@media screen and (min-width: 1200px){
+    .informations_film {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 70px 50px 50px 50px 50px 50px 50px 50px;
 }
 
-.informations_film button {
-    background-color: whitesmoke;
-    width: 40px;
-    height: 30px;
-    color: #C74E42;
-    font-size: 2em;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: auto;
+    .informations_film button {
+        background-color: whitesmoke;
+        width: 40px;
+        height: 30px;
+        color: #C74E42;
+        font-size: 2em;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: auto;
+    }
+
+    button:hover {
+        color: #A34F43;
+    }
+
+    .informations_film h3,
+    .informations_film P {
+        grid-column: 1/2;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    .informations_film h3 {
+        font-size: 3em;
+    }
+
+    .informations_film img {
+        grid-column: 2/3;
+        grid-row: 1/ 8;
+        padding: 15px;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+        margin: auto;
+    }
+
+    .popup span {
+        font-weight: bold;
+    }
 }
 
-button:hover {
-    color: #A34F43;
+/* Format Desktop */
+@media screen and (max-width: 1200px){
+    .informations_film {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 70px 50px 50px 50px 50px 50px 50px 50px;
 }
 
-.informations_film h3,
-.informations_film P {
-    grid-column: 1/2;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    .informations_film button {
+        background-color: whitesmoke;
+        width: 40px;
+        height: 30px;
+        color: #C74E42;
+        font-size: 2em;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: auto;
+    }
+
+    button:hover {
+        color: #A34F43;
+    }
+
+    .informations_film h3,
+    .informations_film P {
+        grid-column: 1/2;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    .informations_film h3 {
+        font-size: 3em;
+    }
+
+    .informations_film img {
+        grid-column: 2/3;
+        grid-row: 1/ 8;
+        padding: 15px;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+        margin: auto;
+    }
+
+    .popup span {
+        font-weight: bold;
+    }
 }
 
-.informations_film h3 {
-    font-size: 3em;
+/* Format tablette */
+@media screen and (max-width: 900px){
+    .informations_film {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 70px 50px 50px 50px 50px 50px 50px 50px;
 }
 
-.informations_film img {
-    grid-column: 2/3;
-    grid-row: 1/ 8;
-    padding: 15px;
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 30px;
-    margin: auto;
-}
+    .informations_film button {
+        background-color: whitesmoke;
+        width: 40px;
+        height: 30px;
+        color: #C74E42;
+        font-size: 2em;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: auto;
+    }
 
-.popup span {
-    font-weight: bold;
+    button:hover {
+        color: #A34F43;
+    }
+
+    .informations_film h3,
+    .informations_film P {
+        grid-column: 1/2;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    .informations_film h3 {
+        font-size: 3em;
+    }
+
+    .informations_film img {
+        grid-column: 2/3;
+        grid-row: 1/ 8;
+        padding: 15px;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+        margin: auto;
+    }
+
+    .popup span {
+        font-weight: bold;
+    }
 }
