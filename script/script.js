@@ -6,6 +6,5 @@ dataFilmsMn(urlFilmsMieuxNote, "section.film.Mieux_note .contenair_film")
 dataFilms(urlFilmsMystery, "section.film.Mystery .contenair_film")
 dataFilms(urlFilmsCategorie2, "section.film.Categorie_2 .contenair_film")
 
-initPopup()
 
-
+dataGenres()
