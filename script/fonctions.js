@@ -81,12 +81,13 @@ async function dataFilmsMn(requete, balise) {
   }
 }
 
-//Gestion des catégories Autres
-let selectAutres1 = document.getElementById("categorie_autres_1")
-let selectAutres2 = document.getElementById("categorie_autres_2")
-
 //Ajout des options dans les balises selects de la page web
 async function dataGenres() {
+
+  //Gestion des catégories Autres
+  let selectAutres1 = document.getElementById("categorie_autres_1")
+  let selectAutres2 = document.getElementById("categorie_autres_2")
+
   const data = await recupererDonnees(urlGenres)
   for (let i = 0; i < data.results.length; i++) {
     let name = data.results[i].name
@@ -102,6 +103,29 @@ async function dataGenres() {
     option2.textContent = name
     selectAutres2.appendChild(option2)
   }
+  let valeur1 = selectAutres1.value
+  let texte1 = selectAutres1.options[selectAutres1.selectedIndex].text;
+  console.log(valeur1)
+  console.log(texte1)
+
+  let valeur2 = selectAutres2.value
+  let texte2 = selectAutres2.options[selectAutres1.selectedIndex].text;
+  console.log(valeur2)
+  console.log(texte2)
+
+  select1.addEventListener("change", (event) => {
+    const valeur = event.target.value;
+    const texte = event.target.selectedOptions[0].text;
+
+    console.log(valeur, texte);
+  })
+
+  select2.addEventListener("change", (event) => {
+    const valeur = event.target.value;
+    const texte = event.target.selectedOptions[0].text;
+
+    console.log(valeur, texte);
+  })
 }
 
 // gestion du Popup
