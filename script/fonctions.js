@@ -82,50 +82,35 @@ async function dataFilmsMn(requete, balise) {
 }
 
 //Ajout des options dans les balises selects de la page web
-async function dataGenres() {
+async function dataGenres(url, balise) {
 
   //Gestion des catégories Autres
-  let selectAutres1 = document.getElementById("categorie_autres_1")
-  let selectAutres2 = document.getElementById("categorie_autres_2")
+  let selectAutres = document.getElementById(balise)
 
-  const data = await recupererDonnees(urlGenres)
+  const data = await recupererDonnees(url)
   for (let i = 0; i < data.results.length; i++) {
     let name = data.results[i].name
     let value = data.results[i].id
 
-    const option1 = document.createElement("option")
-    option1.value = value
-    option1.textContent = name
-    selectAutres1.appendChild(option1)
-
-    const option2 = document.createElement("option")
-    option2.value = value
-    option2.textContent = name
-    selectAutres2.appendChild(option2)
+    const option = document.createElement("option")
+    option.value = value
+    option.textContent = name
+    selectAutres.appendChild(option)
   }
-  let valeur1 = selectAutres1.value
-  let texte1 = selectAutres1.options[selectAutres1.selectedIndex].text;
-  console.log(valeur1)
-  console.log(texte1)
 
-  let valeur2 = selectAutres2.value
-  let texte2 = selectAutres2.options[selectAutres1.selectedIndex].text;
-  console.log(valeur2)
-  console.log(texte2)
+  let valeur = selectAutres.value
+  let texte = selectAutres.options[selectAutres.selectedIndex].text;
+  console.log(valeur, texte)
+  
 
-  select1.addEventListener("change", (event) => {
+  let select = document.getElementById(balise)
+  select.addEventListener("change", (event) => {
     const valeur = event.target.value;
     const texte = event.target.selectedOptions[0].text;
 
     console.log(valeur, texte);
   })
 
-  select2.addEventListener("change", (event) => {
-    const valeur = event.target.value;
-    const texte = event.target.selectedOptions[0].text;
-
-    console.log(valeur, texte);
-  })
 }
 
 // gestion du Popup
