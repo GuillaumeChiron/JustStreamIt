@@ -182,7 +182,7 @@ async function initPopup(balise) {
         <img
             src="${image_url}">
       </div>
-      <p>${dataFilm.long_description}</p>
+      <p class="texte-description">${dataFilm.long_description}</p>
       <p><span>Avec:</span><br>${newActeurs}</p>`;
 
     afficherPopup()

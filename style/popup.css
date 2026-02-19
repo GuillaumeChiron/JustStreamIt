@@ -7,7 +7,7 @@
     display: none;
 }
 
-.popupBackground {
+  .popupBackground {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -28,6 +28,7 @@
 
 /* Format grand écran */
 @media screen and (min-width: 1200px){
+
     .informations_film {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -80,104 +81,122 @@
 
 /* Format Desktop */
 @media screen and (max-width: 1200px){
-    .informations_film {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 70px 50px 50px 50px 50px 50px 50px 50px;
-}
 
-    .informations_film button {
-        background-color: whitesmoke;
-        width: 40px;
-        height: 30px;
-        color: #C74E42;
-        font-size: 2em;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: auto;
-    }
-
-    button:hover {
-        color: #A34F43;
-    }
-
-    .informations_film h3,
-    .informations_film P {
-        grid-column: 1/2;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-    }
-
-    .informations_film h3 {
-        font-size: 3em;
-    }
-
-    .informations_film img {
-        grid-column: 2/3;
-        grid-row: 1/ 8;
-        padding: 15px;
-        width: auto;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 30px;
-        margin: auto;
-    }
-
-    .popup_content span {
-        font-weight: bold;
-    }
 }
 
 /* Format tablette */
 @media screen and (max-width: 900px){
-    .informations_film {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 70px 50px 50px 50px 50px 50px 50px 50px;
-}
 
-    .informations_film button {
+    .popupBackground{
+        width: 90vw;
+        height: 90vh;
+    }
+
+    .informations_film {
+        display: flex;
+        flex-direction: column;
+    }
+
+   .informations_film button {
         background-color: whitesmoke;
         width: 40px;
-        height: 30px;
+        height: 20px;
         color: #C74E42;
         font-size: 2em;
         display: flex;
-        justify-content: flex-start;
         align-items: center;
-        padding: auto;
     }
 
     button:hover {
         color: #A34F43;
     }
 
-    .informations_film h3,
-    .informations_film P {
-        grid-column: 1/2;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-    }
 
     .informations_film h3 {
-        font-size: 3em;
+        font-size: 2em;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
-    .informations_film img {
-        grid-column: 2/3;
-        grid-row: 1/ 8;
-        padding: 15px;
-        width: auto;
-        height: 100%;
+     .informations_film img {
+        width: 70vw;
+        height: 200px;
         object-fit: cover;
-        border-radius: 30px;
-        margin: auto;
+        margin-top: 16px;
+    }
+    
+    
+    .informations_film p {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .texte-description {
+        height: 150px;
+        overflow: scroll;
     }
 
     .popup_content span {
         font-weight: bold;
     }
 }
+
+
+/* Format Mobile */
+@media screen and (max-width: 600px) {
+
+    .popupBackground{
+        width: 90vw;
+        height: 90vh;
+    }
+
+    .informations_film {
+        display: flex;
+        flex-direction: column;
+    }
+
+   .informations_film button {
+        background-color: whitesmoke;
+        width: 40px;
+        height: 20px;
+        color: #C74E42;
+        font-size: 2em;
+        display: flex;
+        align-items: center;
+    }
+
+    button:hover {
+        color: #A34F43;
+    }
+
+
+    .informations_film h3 {
+        font-size: 2em;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+     .informations_film img {
+        width: auto;
+        height: 200px;
+        object-fit: cover;
+        margin-top: 16px;
+    }
+    
+    
+    .informations_film p {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .texte-description {
+        height: 150px;
+        overflow: scroll;
+    }
+
+    .popup_content span {
+        font-weight: bold;
+    }
+
+}
+
