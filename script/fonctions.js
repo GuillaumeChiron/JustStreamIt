@@ -101,7 +101,7 @@ async function dataGenres(url, balise, balise2) {
   let valeur = selectAutres.value
   let texte = selectAutres.options[selectAutres.selectedIndex].text;
   console.log(valeur, texte)
-  dataFilms("http://localhost:8000/api/v1/titles/?genre=" + texte +"&page_size=6", balise2)
+  dataFilms("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=" + texte +"&page_size=6", balise2)
   
   let select = document.getElementById(balise)
   select.addEventListener("change", (event) => {
@@ -109,7 +109,7 @@ async function dataGenres(url, balise, balise2) {
     const texte = event.target.selectedOptions[0].text;
     console.log(valeur, texte);
 
-    dataFilms("http://localhost:8000/api/v1/titles/?genre=" + texte +"&page_size=6", balise2)
+    dataFilms("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=" + texte +"&page_size=6", balise2)
   })
 }
 
