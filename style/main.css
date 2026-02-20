@@ -3,6 +3,11 @@
 }
 
 /* Gestion des élements de façon générale */
+
+.one {
+    padding-bottom: 20px;
+}
+
 h2 {
     font-family: "Oswald", sans-serif;
     font-size: 4em;
@@ -274,7 +279,7 @@ select {
     }
 
     .contenair_film {
-        width: 300px;
+        width: 285px;
         scroll-snap-align: start;
     }
 
