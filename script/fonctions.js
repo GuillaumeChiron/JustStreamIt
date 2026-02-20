@@ -101,15 +101,15 @@ async function dataGenres(url, balise, balise2) {
   let valeur = selectAutres.value
   let texte = selectAutres.options[selectAutres.selectedIndex].text;
   console.log(valeur, texte)
-  dataFilms("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=" + texte +"&page_size=6", balise2)
-  
+  dataFilms("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=" + texte + "&page_size=6", balise2)
+
   let select = document.getElementById(balise)
   select.addEventListener("change", (event) => {
     const valeur = event.target.value;
     const texte = event.target.selectedOptions[0].text;
     console.log(valeur, texte);
 
-    dataFilms("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=" + texte +"&page_size=6", balise2)
+    dataFilms("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=" + texte + "&page_size=6", balise2)
   })
 }
 
@@ -138,7 +138,7 @@ async function initPopup(balise) {
 
     urlFilm = `http://localhost:8000/api/v1/titles/${card.id}`
     const dataFilm = await recupererDonnees(urlFilm)
-    
+
     //Elements du Film
     let genres = dataFilm.genres
     let newGenres = ""
@@ -182,7 +182,7 @@ async function initPopup(balise) {
           <p><span>Réalisé par:</span>&nbsp;${newRealisateur}</p>
         </div>
         <img
-            src="${image_url}">
+            src="${image_url}" alt="photo-film" title="photo-film">
       </div>
       <p class="texte-description">${dataFilm.long_description}</p>
       <p><span>Avec:</span><br>${newActeurs}</p>`;

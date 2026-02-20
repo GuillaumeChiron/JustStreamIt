@@ -166,7 +166,6 @@ select {
     height: 30px;
     background-color: whitesmoke;
     text-align: center;
-    text-justify: center;
 }
 
 
@@ -412,6 +411,3 @@ select {
         height: 25px;
     }
 }
-
-
-
