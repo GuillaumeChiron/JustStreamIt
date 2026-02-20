@@ -3,10 +3,6 @@
 }
 
 /* Gestion des éléments du header */
-header {
-    margin: 50px;
-}
-
 h1 {
     font-family: "Oswald", sans-serif;
     font-weight: 200;
@@ -30,20 +26,29 @@ h1 {
     height: 150PX;
 }
 
-/* Format Tablette */
-@media screen and (max-width: 900px) {
-
+/* Format Ecran large */
+@media screen and (min-width: 1200px) {
     .box {
-        gap: 30px;
+        gap: 50px;
     }
 }
 
-/* Format Mobile */
-@media screen and (max-width: 600px) {
-
-    header {
-        margin: 10px;
+/* Format Desktop */
+@media screen and (max-width: 1200px) {
+    .box {
+        gap: 50px;
     }
+}
+
+/* Format Laptop */
+@media screen and (max-width: 1024px) {
+    .box {
+        gap: 40px;
+    }
+}
+
+/* Format tablette */
+@media screen and (max-width: 768px) {
 
     .box {
         height: 150px;
@@ -56,5 +61,13 @@ h1 {
 
     h1 {
         display: none;
+    }
+}
+
+/* Format Mobile */
+@media screen and (max-width: 480px) {
+
+    header {
+        margin: 10px;
     }
 }
