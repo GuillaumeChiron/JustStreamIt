@@ -98,7 +98,6 @@ img {
 .box_film_hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-row: 50px 50px;
     background-color: rgba(0, 0, 0, 0.4);
     position: absolute;
     top: 50%;
