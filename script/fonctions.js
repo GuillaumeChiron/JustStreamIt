@@ -171,14 +171,16 @@ async function initPopup(balise) {
       newActeurs += `${acteurs[iA]}, `
     }
 
-    popup.innerHTML = `<div class="informations_film">
-        <button id="btnClose">←</button>
-        <h3><span>${dataFilm.title}</span></h3>
-        <p><span>${dataFilm.year} - ${newGenres}</span></p>
-        <p><span>PG, ${dataFilm.duration} minutes (${newPays})</span></p>
-        <p><span>IMDB score: ${dataFilm.imdb_score}/10</span></p>
-        <p><span>Recette box-office: </span>&nbsp;${recette}</p>
-        <p><span>Réalisé par:</span>&nbsp;${newRealisateur}</p>
+    popup.innerHTML = `<div class="box-informations-film">
+        <div class="informations_film">
+          <button id="btnClose">←</button>
+          <h3><span>${dataFilm.title}</span></h3>
+          <p><span>${dataFilm.year} - ${newGenres}</span></p>
+          <p><span>PG, ${dataFilm.duration} minutes (${newPays})</span></p>
+          <p><span>IMDB score: ${dataFilm.imdb_score}/10</span></p>
+          <p><span>Recette box-office: </span>&nbsp;${recette}</p>
+          <p><span>Réalisé par:</span>&nbsp;${newRealisateur}</p>
+        </div>
         <img
             src="${image_url}">
       </div>

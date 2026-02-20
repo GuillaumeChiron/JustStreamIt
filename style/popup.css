@@ -12,7 +12,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    flex-wrap: wrap;
+    width: 90vw;
+    height: 90vh;
 }
 
 .popup_content {
@@ -24,10 +25,54 @@
     z-index: 1000;
 }
 
+.informations_film button {
+    background-color: whitesmoke;
+    width: 40px;
+    height: 20px;
+    color: #C74E42;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    }
+
+button:hover {
+    color: #A34F43;
+}
+
+.popup_content span {
+    font-weight: bold;
+}
+
+
 /* gestion du responsive */
 
 /* Format grand écran */
 @media screen and (min-width: 1200px){
+    .popup_content p {
+        font-size: 1.5em;
+    }
+
+    .box-informations-film {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .informations_film h3 {
+        font-size: 3.5em;
+        margin-top: auto;
+    }
+
+    .informations_film p {
+        font-size: 1.75em;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .box-informations-film img {
+        margin: auto;
+        width: 30%;
+        object-fit: cover;
+    }
 
 }
 
@@ -35,6 +80,31 @@
 /* Format Desktop */
 @media screen and (max-width: 1200px){
 
+    .popup_content p {
+        font-size: 1.25em;
+    }
+
+    .box-informations-film {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .informations_film h3 {
+        font-size: 3em;
+        margin-top: auto;
+    }
+
+    .informations_film p {
+        font-size: 1.5em;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .box-informations-film img {
+        margin: auto;
+        width: 30%;
+        object-fit: cover;
+    }
 }
 
 /* Format Laptop */
@@ -46,36 +116,29 @@
 /* Format tablette */
 @media screen and (max-width: 768px){
 
-    .popupBackground{
-        width: 90vw;
-        height: 90vh;
-    }
-
     .popup_content p {
         font-size: 1.25em;
     }
 
-    .popup_content span {
-        font-weight: bold;
+    .box-informations-film {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box-informations-film img {
+        width: 70vw;
+        height: 300px;
+        object-fit: cover;
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .informations_film {
         display: flex;
         flex-direction: column;
-    }
-
-   .informations_film button {
-        background-color: whitesmoke;
-        width: 40px;
-        height: 20px;
-        color: #C74E42;
-        font-size: 2em;
-        display: flex;
-        align-items: center;
-    }
-
-    button:hover {
-        color: #A34F43;
     }
 
     .informations_film h3 {
@@ -83,18 +146,9 @@
         margin-top: auto;
         margin-bottom: auto;
     }
-
-     .informations_film img {
-        width: 70vw;
-        height: 200px;
-        object-fit: cover;
-        margin-top: 16px;
-        margin-left: auto;
-        margin-right: auto;
-    }
     
     .informations_film p {
-        font-size: 1.5em;
+        font-size: 1.25em;
         margin-top: auto;
         margin-bottom: auto;
     }
@@ -103,72 +157,25 @@
         height: 150px;
         overflow: scroll;
     }
-
-    
 }
 
 
 /* Format Mobile */
 @media screen and (max-width: 480px) {
 
-    .popupBackground{
-        width: 90vw;
-        height: 90vh;
-    }
-
-    .popup_content span {
-        font-weight: bold;
-    }
 
     .popup_content p {
         font-size: 1em;
     }
 
-    .informations_film {
-        display: flex;
-        flex-direction: column;
-    }
-
-   .informations_film button {
-        background-color: whitesmoke;
-        width: 40px;
-        height: 20px;
-        color: #C74E42;
-        font-size: 2em;
-        display: flex;
-        align-items: center;
-    }
-
-    button:hover {
-        color: #A34F43;
-    }
-
     .informations_film h3 {
-        font-size: 2em;
-        margin-top: auto;
-        margin-bottom: auto;
+        font-size: 1.75em;
     }
-
-     .informations_film img {
-        width: 70vw;
-        height: 200px;
-        object-fit: cover;
-        margin-top: 16px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
     
     .informations_film p {
         font-size: 1em;
         margin-top: auto;
         margin-bottom: auto;
     }
-
-    .texte-description {
-        height: 150px;
-        overflow: scroll;
-    }
-
 }
 
