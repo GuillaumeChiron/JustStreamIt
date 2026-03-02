@@ -68,6 +68,7 @@ async function dataFilms(requete, balise) {
   }
 }
 
+
 //Met à jour les données des films de la catégorie Films mieux notés
 async function dataFilmsMn(requete, balise) {
   const dataFilms = await recupererDonnees(requete)
@@ -92,6 +93,7 @@ async function dataFilmsMn(requete, balise) {
 
   }
 }
+
 
 //Ajout des options dans les balises selects de la page web
 async function dataGenres(url, balise, balise2) {
@@ -125,6 +127,7 @@ async function dataGenres(url, balise, balise2) {
   })
 }
 
+
 // gestion du Popup
 const popupBackground = document.querySelector(".popupBackground")
 const popup = document.querySelector(".popup_content")
@@ -134,9 +137,11 @@ function afficherPopup() {
   popupBackground.classList.remove("hidden")
 }
 
+
 function cacherPopup() {
   popupBackground.classList.add("hidden")
 }
+
 
 async function initPopup(balise) {
 
