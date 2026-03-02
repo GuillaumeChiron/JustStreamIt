@@ -2,7 +2,7 @@
 
 //Lance les différentes fonctions pour mettre à jour la page web
 dataMeilleurFilm(urlMeilleursFilm)
-dataFilms(urlFilmsMieuxNote, ".Mieux_note .film")
+dataFilmsMn(urlFilmsMieuxNote, ".Mieux_note .film")
 dataFilms(urlFilmsMystery, ".Mystery .film")
 dataFilms(urlFilmsCategorie2, ".Categorie_2 .film")
 

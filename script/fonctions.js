@@ -69,7 +69,29 @@ async function dataFilms(requete, balise) {
 }
 
 //Met à jour les données des films de la catégorie Films mieux notés
+async function dataFilmsMn(requete, balise) {
+  const dataFilms = await recupererDonnees(requete)
+  const sectionFilm = document.querySelector(balise)
+  console.log(requete)
 
+  sectionFilm.innerHTML = ""
+  for (let i = 1; i < dataFilms.results.length; i++) {
+    let data = await recupererDonnees(dataFilms.results[i].url)
+
+    const imageUrl = await imageError(data.image_url, imageDefault)
+    const title = data.title.slice(0, 13) + "..."
+
+
+    sectionFilm.innerHTML += `<div class="contenair_film" id="${data.id}">
+          <img src= ${imageUrl}
+              alt="photo-film" title="photo-film">
+          <div class="box_film_hover">
+          <h3 class="film_one">${title}</h3>
+          <button class="film_two btnDetails">Détails</button>
+        </div>`
+
+  }
+}
 
 //Ajout des options dans les balises selects de la page web
 async function dataGenres(url, balise, balise2) {
