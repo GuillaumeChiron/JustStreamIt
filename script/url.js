@@ -6,7 +6,7 @@ const urlGenres = "http://localhost:8000/api/v1/genres/?page_size=25"
 //URL des Catégories de films
 const urlMeilleursFilm = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
 const urlFilmsMieuxNote = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7"
-const urlFilmsMystery = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Mystery&page_size=6"
+const urlFilmsCrime = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Crime&page_size=6"
 const urlFilmsCategorie2 = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Sci-Fi&page_size=6"
 
 //URL image par default des films sans image
