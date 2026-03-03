@@ -122,18 +122,13 @@ button:hover {
 @media screen and (max-width: 768px){
 
     .popup_content p {
-        font-size: 1.25em;
-    }
-
-    .box-informations-film {
-        display: flex;
-        flex-direction: column;
+        font-size: 1em;
     }
 
     .box-informations-film img {
-        width: 70vw;
-        height: 300px;
-        object-fit: cover;
+        width: 30%;
+        height: auto;
+        object-fit: contain;
         margin-top: 16px;
         display: flex;
         justify-content: center;
@@ -147,34 +142,40 @@ button:hover {
     }
 
     .informations_film h3 {
-        font-size: 2.5em;
+        font-size: 2em;
         margin-top: auto;
         margin-bottom: auto;
     }
     
     .informations_film p {
-        font-size: 1.25em;
+        font-size: 1em;
         margin-top: auto;
         margin-bottom: auto;
     }
 
-    .texte-description {
-        height: 150px;
-        overflow: scroll;
-    }
 }
 
 
 /* Format Mobile */
 @media screen and (max-width: 480px) {
 
+    .box-informations-film {
+        display: flex;
+        flex-direction: column;
+    }
 
     .popup_content p {
         font-size: 1em;
     }
 
+    .box-informations-film img {
+        width: 50%;
+        height: auto;
+        object-fit: contain;
+    }
+
     .informations_film h3 {
-        font-size: 1.75em;
+        font-size: 1.5em;
     }
     
     .informations_film p {
@@ -182,5 +183,10 @@ button:hover {
         margin-top: auto;
         margin-bottom: auto;
     }
-}
 
+     .texte-description {
+        height: 150px;
+        overflow: scroll;
+    }
+
+}

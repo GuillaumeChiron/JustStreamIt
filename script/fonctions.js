@@ -56,7 +56,7 @@ async function dataFilms(requete, balise) {
     const imageUrl = await imageError(data.image_url, imageDefault)
     let title = data.title
     if (title.length > 14) {
-      title = data.title.slice(0, 13) + "..."
+      title = title.slice(0, 13) + "..."
     }
 
 
@@ -85,7 +85,7 @@ async function dataFilmsMn(requete, balise) {
     const imageUrl = await imageError(data.image_url, imageDefault)
     let title = data.title
     if (title.length > 14) {
-      title = data.title.slice(0, 13) + "..."
+      title = title.slice(0, 13) + "..."
     }
     
     sectionFilm.innerHTML += `<div class="contenair_film" id="${data.id}">
