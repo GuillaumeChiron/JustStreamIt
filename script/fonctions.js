@@ -54,7 +54,10 @@ async function dataFilms(requete, balise) {
     let data = await recupererDonnees(dataFilms.results[i].url)
 
     const imageUrl = await imageError(data.image_url, imageDefault)
-    const title = data.title.slice(0, 13) + "..."
+    let title = data.title
+    if (title.length > 14) {
+      title = data.title.slice(0, 13) + "..."
+    }
 
 
     sectionFilm.innerHTML += `<div class="contenair_film" id="${data.id}">
@@ -80,9 +83,11 @@ async function dataFilmsMn(requete, balise) {
     let data = await recupererDonnees(dataFilms.results[i].url)
 
     const imageUrl = await imageError(data.image_url, imageDefault)
-    const title = data.title.slice(0, 13) + "..."
-
-
+    let title = data.title
+    if (title.length > 14) {
+      title = data.title.slice(0, 13) + "..."
+    }
+    
     sectionFilm.innerHTML += `<div class="contenair_film" id="${data.id}">
           <img src= ${imageUrl}
               alt="photo-film" title="photo-film">
@@ -171,7 +176,7 @@ async function initPopup(balise) {
 
     let recette = dataFilm.budget
     if (recette === null) {
-      recette = "information inexistante"
+      recette = "..."
     }
 
     let realisateur = dataFilm.directors
