@@ -8,7 +8,6 @@ dataFilms(urlFilmsCategorie2, ".Categorie_2 .film")
 
 
 dataGenres(urlGenres, "categorie_autres_1", ".Autres_1")
-dataGenres(urlGenres, "categorie_autres_2", ".Autres_2")
 
 initPopup(".box_meilleur_film")
 initPopup(".contenair_film")
