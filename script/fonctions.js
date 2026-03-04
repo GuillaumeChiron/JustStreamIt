@@ -87,7 +87,7 @@ async function dataFilmsMn(requete, balise) {
     if (title.length > 14) {
       title = title.slice(0, 13) + "..."
     }
-    
+
     sectionFilm.innerHTML += `<div class="contenair_film" id="${data.id}">
           <img src= ${imageUrl}
               alt="photo-film" title="photo-film">
@@ -199,7 +199,7 @@ async function initPopup(balise) {
           <h3><span>${dataFilm.title}</span></h3>
           <p><span>${dataFilm.year} - ${newGenres}</span></p>
           <p><span>${dataFilm.rated}, ${dataFilm.duration} minutes (${newPays})</span></p>
-          <p><span>IMDB score: ${dataFilm.imdb_score}/10</span></p>
+          <p><span>IMDB score:</span> ${dataFilm.imdb_score}/10</p>
           <p><span>Recette box-office: </span>&nbsp;${recette}</p>
           <p><span>Réalisé par:</span>&nbsp;${newRealisateur}</p>
         </div>
