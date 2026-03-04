@@ -1,11 +1,11 @@
-# 🎬 JustStreamIt
+# JustStreamIt
 
 Application web front-end permettant d’afficher et d’explorer les films les mieux notés grâce à l’API **OCMovies**.  
 L’interface récupère dynamiquement les données des films et les présente dans différentes catégories avec une interface responsive.
 
 ---
 
-## 📖 Description
+## Description
 
 **JustStreamIt** est une plateforme web qui permet de découvrir les films les mieux notés en utilisant une API locale.  
 Les informations sont récupérées dynamiquement via des requêtes HTTP.
@@ -19,9 +19,9 @@ L’utilisateur peut :
 
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-### 🎥 Meilleur film
+### Meilleur film
 Une section met en avant le film ayant la meilleure note IMDB :
 
 - affiche du **poster**
@@ -31,7 +31,7 @@ Une section met en avant le film ayant la meilleure note IMDB :
 
 ---
 
-### 📱 Responsive Design
+### Responsive Design
 
 Le site s’adapte automatiquement à la taille de l’écran.
 
@@ -45,7 +45,7 @@ Les films supplémentaires peuvent être affichés en scrollant.
 
 ---
 
-### 📄 Fenêtre modale
+### Fenêtre modale
 
 Lorsqu’un utilisateur clique sur un film ou sur le bouton **Détails**, une modale s’ouvre contenant :
 
@@ -88,7 +88,7 @@ Cette API permet de récupérer :
 
 ---
 
-## 🛠️ Technologies utilisées
+## Technologies utilisées
 
 - HTML5
 - CSS3
