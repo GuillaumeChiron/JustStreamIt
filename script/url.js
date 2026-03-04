@@ -10,4 +10,4 @@ const urlFilmsCrime = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&
 const urlFilmsCategorie2 = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Sci-Fi&page_size=6"
 
 //URL image par default des films sans image
-const imageDefault = "https://fastly.picsum.photos/id/234/200/300.jpg?hmac=KD9xFDCez7-lqgcMm-EEi7BtpClIdCzJS6YvFVyLiDs"
+const imageDefault = "../images/noFilm.jpg"
