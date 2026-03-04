@@ -21,16 +21,6 @@ L’utilisateur peut :
 
 ## Fonctionnalités
 
-### Meilleur film
-Une section met en avant le film ayant la meilleure note IMDB :
-
-- affiche du **poster**
-- **titre du film**
-- **résumé**
-- bouton **Détails** ouvrant une fenêtre modale
-
----
-
 ### Responsive Design
 
 Le site s’adapte automatiquement à la taille de l’écran.
@@ -78,7 +68,7 @@ Cette API permet de récupérer :
 
 ### Installation et exécution de l'application
 
-1. Clonez ce dépôt de code à l'aide de la commande `$ git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git` (vous pouvez également télécharger une [archive zip](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR/archive/refs/heads/master.zip))
+1. Clonez ce dépôt de code à l'aide de la commande `$ git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git`
 2. Rendez-vous depuis un terminal à la racine du répertoire ocmovies-api-fr avec la commande `$ cd ocmovies-api-fr`
 3. Créez un environnement virtuel pour le projet avec `$ python -m venv env` sous windows ou `$ python3 -m venv env` sous macos ou linux.
 4. Activez l'environnement virtuel avec `$ env\Scripts\activate` sous windows ou `$ source env/bin/activate` sous macos ou linux.
