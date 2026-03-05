@@ -216,6 +216,12 @@ select {
         justify-content: flex-start;
     }
 
+    .element_mf_1 {
+        max-width: 100%;
+        max-height: auto;
+        object-fit: cover;
+    }
+
     .element_mf_2 {
         margin-top: auto;
         margin-bottom: auto;
@@ -316,13 +322,12 @@ select {
         padding: 20px;
     }
 
-    .element_mf_2 {
-        margin: auto;
-        text-align: center;
+    .element_mf_1 {
+        object-fit: cover;
     }
 
-    .element_mf_3 {
-        overflow: visible;
+    .element_mf_2 {
+        margin: auto;
     }
 
     .film {
